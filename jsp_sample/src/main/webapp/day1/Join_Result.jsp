@@ -8,18 +8,20 @@
 </head>
 <body>
 
-	<%@ page import="java.util.Arrays" %>
 	<%
-	
-	String id = request.getParameter("userId");
-	String hobby[] = request.getParameterValues("hobby");
-	
-	out.println(Arrays.toString(hobby));
-		for(int i=0; i <hobby.length; i++){
+		String id = request.getParameter("userId");
+		String hobby[] = request.getParameterValues("hobby");
+		
+		// out.println(Arrays.toString(hobby));
+		for(int i=0; i<hobby.length; i++){
 			out.println(hobby[i]);
 		}
-	
+		
 	%>
+	
+	
+	
+	
 
 </body>
 </html>
