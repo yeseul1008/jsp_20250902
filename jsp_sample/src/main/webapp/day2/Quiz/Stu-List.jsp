@@ -52,16 +52,11 @@ th {
 			<tr>
 
 				<th>학번</th>
-
 				<th>이름</th>
-
 				<th>학과</th>
-
 				<th>키</th>
 
 			</tr>
-
-
 
 			<!-- DB에서 목록 가져오기 -->
 
@@ -111,16 +106,12 @@ th {
 			%>
 
 		</table>
-
-
-
+		<div>
+			<a href="Stu-Add.jsp">
+				<input type="button" value="글쓰기">
+			</a>
+		</div>
 	</div>
-
-
-
-
-
-
 
 </body>
 </html>

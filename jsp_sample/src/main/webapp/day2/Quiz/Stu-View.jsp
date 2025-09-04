@@ -39,8 +39,8 @@
     	
     	String query = "SELECT S.STU_NO, S.STU_NAME, S.STU_DEPT, AVG(ENR_GRADE) AS AVG_GRADE " +
     	               "FROM STUDENT S LEFT JOIN ENROL E ON S.STU_NO = E.STU_NO " +
-    	               "WHERE S.STU_NO = " + stuNo +
-    	               " GROUP BY S.STU_NO, S.STU_NAME, S.STU_DEPT";
+    	               "WHERE S.STU_NO = '" + stuNo +
+    	               "' GROUP BY S.STU_NO, S.STU_NAME, S.STU_DEPT";
     	
     	rs = stmt.executeQuery(query);
     %>
@@ -71,6 +71,7 @@
         </table>
         <div>
         	<input type="button" value="삭제" onclick="fnRemove()">
+        	<input type="button" value="수정" onclick="fnEdit(<%= rs.getString("STU_NO") %>)">
         </div>
     </form>
     <%
@@ -89,5 +90,11 @@
 			return;
 		}
 		board.submit();
+	}
+	function fnEdit(stuNo) {
+		let board = document.board;
+		board.action = "Stu-Edit.jsp?stuNo=" + stuNo;
+		board.submit();
+		console.log(board.action);
 	}
 </script>
